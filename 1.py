@@ -20,4 +20,5 @@ for d in afiles:
     aadirs.append(d[apathlen:])
 for i in aadirs:
     print(i)
-123123
+    print(123123)
+    print(456)
