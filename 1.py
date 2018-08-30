@@ -12,7 +12,7 @@ apath = 'E:\PyCharmScripts\CMDB\AsyncTask'
 afiles = []
 bfiles = []
 for root, dirs , files in os.walk(apath):
-    # for f in files:
+    for f in files:
     afiles.append(root)
 apathlen = len(apath)
 aadirs = []
@@ -20,7 +20,3 @@ for d in afiles:
     aadirs.append(d[apathlen:])
 for i in aadirs:
     print(i)
-    print(123123)
-    print('buzd')
-    print('lajichanpin')
-asdasdasdasd
