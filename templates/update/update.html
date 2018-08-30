@@ -1,0 +1,63 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}程序更新{% endblock %}
+
+{% block content %}
+    <form id="notice" action="/index/update.html/" method="POST" enctype="multipart/form-data">
+        <p>
+            <span class="frame">平台:</span>
+            <select name="platform" class="tel">
+                <option value="SinaShow">SinaShow</option>
+                <option value="FengBo">疯播</option>
+            </select>
+        </p>
+        <p>
+            <span class="frame">程序</span>
+            <select name="program" class="tel">
+                <option value="AvsServer">AvsServer</option>
+                <option value="ChatServer">ChatServer</option>
+                <option value="TransTrans">TransTrans</option>
+                <option value="PhoneChatServer">PhoneChatServer</option>
+            </select>
+        </p>
+        <p><span class="frame">版本号:</span> <input type="text" name="version" style="width: 200px"/></p>
+        <p><span class="frame">程序地址:</span> <input type="text" name="add" style="width: 200px"/></p>
+        <p><span class="frame">组名:</span> <input type="text" name="group" style="width: 200px"/></p>
+        <p><span class="frame">日期:</span> <input type="text" name="date" style="width: 200px;"/></p>
+        <p><span class="edit"></span> <input class="tel-in" type="submit" value="提交"/></p>
+    </form>
+    <hr style="width:134%;border:1px solid  #E6E9ED"/>
+        <table class="table table-bordered">
+              <thead>
+                <tr>
+                    <th>平台</th>
+                    <th>程序</th>
+                    <th>版本号</th>
+                    <th>组名</th>
+                    <th>日期</th>
+                    <th>时间</th>
+                    <th>结果</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for row in loglist %}
+                      <tr>
+                          <td>{{ row.ip }}</td>
+                          <td>{{ row.dates|safe }}</td>
+                          <td>{{ row.ltime|safe }}</td>
+                          <td>{{ row.state }}</td>
+                          {% if row.result.strip == 'Successd' %}
+                            <td style="color:#00BB00">{{ row.result }}</td>
+                          {% elif row.result.strip == 'Fail' %}
+                              <td style="color:red">{{ row.result }}</td>
+                          {% elif row.result.strip == 'Auth Fail' %}
+                              <td style="color:yellow">{{ row.result }}</td>
+                          {% else %}
+                            <td style="color:black">{{ row.result }}</td>
+                          {% endif %}
+                      </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+{% endblock %}
+

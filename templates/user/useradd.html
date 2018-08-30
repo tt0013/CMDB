@@ -1,0 +1,24 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}权限修改{% endblock %}
+
+{% block content %}
+    <form action="useradd.html" method="POST" enctype="multipart/form-data" >
+        <p><span class="frame">用户名:</span> <input type="text" name="user" value="{{ obj.username }}"/></p>
+        <p><span class="frame">用户组:</span>
+            <select class="uadd" name="group">
+              <option value ="1">无</option>
+              <option value ="2">疯播</option>
+              <option value ="3">Sinashow</option>
+              <option value ="4">Web</option>
+            </select>
+        </p>
+        <p><span class="frame">权限信息:</span>
+            <select class="uadd" name="power">
+              <option value ="1">管理员</option>
+              <option value ="2">超级管理员</option>
+            </select>
+        </p>
+        <p><span class="sub"></span> <input class="sub-i" type="submit" value="提交"/></p>
+    </form>
+{% endblock %}

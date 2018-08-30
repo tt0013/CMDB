@@ -1,0 +1,11 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}密码修改{% endblock %}
+
+{% block content %}
+    <form id="notice" action="passchange.html" method="POST" enctype="multipart/form-data" >
+        <p><span class="frame">用户名:</span> <span>{{ obj.username }}</span></p>
+        <p><span class="frame">新密码:</span> <input style="text-align:center;" type="text" name="pwd"/></p>
+        <p><span class="sub"></span> <input class="sub-i" type="submit" value="提交"/></p>
+    </form>
+{% endblock %}

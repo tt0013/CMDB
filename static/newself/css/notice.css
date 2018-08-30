@@ -1,0 +1,56 @@
+.error{
+    color: red;
+    font-weight:bold;
+    padding:0cm 0.5cm 0cm;
+}
+
+.frame{
+    display:inline-block;
+    width:60px;
+    height:35px;
+    text-align:center;
+}
+.edit{
+    display:inline-block;
+    width:60px;
+    text-align:right;
+}
+.sub{
+    display:inline-block;
+    width:60px;
+    text-align:center;
+}
+.sub-i{
+    width: 172px;
+    border: 2px solid #1ABB9C;
+    color: #1ABB9C;
+}
+.uadd{
+    display:inline-block;
+    width:172px;
+    height:28px;
+    text-align:left;
+}
+.tel{
+    width: 200px;
+    height: 27px;
+    font-weight: bold;
+}
+.tel-i{
+    width: 200px;
+    border: 2px solid #1ABB9C;
+    color: #1ABB9C
+}
+.tel-in{
+    width: 200px;
+    border: 2px solid #1ABB9C;
+    color: #1ABB9C;
+}
+.tel-e{
+    display:inline-block;
+    width:70px;
+    height:40px;
+    text-align:center;
+    font-weight: bold;
+    font-size: 15px;
+}

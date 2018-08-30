@@ -1,0 +1,26 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}用户操作{% endblock %}
+
+{% block content %}
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>用户名</th>
+              <th>用户组</th>
+              <th>权限</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for row in userlist %}
+                  <tr>
+                      <td>{{ row.username }}</td>
+                      <td>{{ row.user_group.group }}</td>
+                      <td>{{ row.user_role.role }}</td>
+                      <td><a style="color: red;" href="userdel-{{ row.id }}">删除</a></td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+{% endblock %}

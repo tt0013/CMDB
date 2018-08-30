@@ -1,0 +1,52 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}日志操作{% endblock %}
+
+{% block content %}
+    <form id="notice" action="/index/rsyslog.html/" method="POST" enctype="multipart/form-data">
+        <p>
+            <span class="frame">网络:</span>
+            <select name="net" class="tel">
+                <option value="tel">电信</option>
+                <option value="ctc">联通</option>
+            </select>
+        </p>
+        <p><span class="frame">主机名:</span> <input type="text" name="host" style="width: 200px"/></p>
+        <p><span class="frame">IP:</span> <input type="text" name="ip" style="width: 200px"/></p>
+        <p><span class="frame">日期:</span> <input type="text" name="date" style="width: 200px;"/></p>
+        <p><span class="edit"></span> <input class="tel-in" type="submit" value="提交"/></p>
+    </form>
+    {#    <br>#}
+    <hr style="width:134%;border:1px solid  #E6E9ED"/>
+        <table class="table table-bordered">
+              <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>日期</th>
+                    <th>时间</th>
+                    <th>状态</th>
+                    <th>结果</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for row in loglist %}
+                      <tr>
+                          <td>{{ row.ip }}</td>
+                          <td>{{ row.dates|safe }}</td>
+                          <td>{{ row.ltime|date:"Y-m-d H:i:s"  }}</td>
+                          <td>{{ row.state }}</td>
+                          {% if row.result.strip == 'Successd' %}
+                            <td style="color:#00BB00">{{ row.result }}</td>
+                          {% elif row.result.strip == 'Fail' %}
+                              <td style="color:red">{{ row.result }}</td>
+                          {% elif row.result.strip == 'Auth Fail' %}
+                              <td style="color:yellow">{{ row.result }}</td>
+                          {% else %}
+                            <td style="color:black">{{ row.result }}</td>
+                          {% endif %}
+                      </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+{% endblock %}
+

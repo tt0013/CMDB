@@ -1,0 +1,27 @@
+{% extends 'soucre/inherit.html' %}
+
+{% block title %}用户信息{% endblock %}
+
+{% block content %}
+    <h2>用户名:
+        <span>{{ obj.username }}</span>
+    </h2>
+    <br>
+    <h2>用户组:
+        <span>{{ obj.user_group.group }}</span>
+    </h2>
+    <br>
+    <h2>邮箱:
+        <span>{{ obj.email }}</span>
+    </h2>
+    <br>
+    <h2>
+        电话号码:
+        <span>{{ obj.telephone }}</span>
+    </h2>
+    <br>
+    <h2>
+        权限信息:
+        <span>{{ obj.user_role.role }}</span>
+    </h2>
+{% endblock %}
