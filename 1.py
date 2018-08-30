@@ -13,7 +13,7 @@ afiles = []
 bfiles = []
 for root, dirs , files in os.walk(apath):
     for f in files:
-    afiles.append(root)
+        afiles.append(root)
 apathlen = len(apath)
 aadirs = []
 for d in afiles:
