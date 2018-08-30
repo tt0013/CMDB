@@ -23,3 +23,4 @@ for i in aadirs:
     print(123123)
     print('buzd')
     print('lajichanpin')
+asdasdasdasd
